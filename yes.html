@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./yes_style.css">
+</head> 
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">YAYYY!!! SEE YOU SOON! I LOVE YOU <3</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media.tenor.com/lCKwsD2OW1kAAAAj/happy-cat-happy-happy-cat.gif" alt="Cute animated illustration">
+        </div>
+        <div class="heart-container">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <iframe width="1" height="1" wmode="transparent" src="https://youtu.be/VccyL2tEnAc" frameborder="0" allowfullscreen></iframe>
+    <script>
+        // Add animation class to hearts after the page loads
+        window.onload = function() {
+            var hearts = document.querySelectorAll('.heart');
+            hearts.forEach(function(heart, index) {
+                setTimeout(function() {
+                    heart.classList.add('animate-heart');
+                }, index * 500); // Delay animation for each heart
+            });
+        };
+    </script>
+</body> 
+</html>

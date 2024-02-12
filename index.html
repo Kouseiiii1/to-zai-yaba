@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head> 
+<body>
+    <div class="container">
+        <div>
+            <h1 id="header_text" class="header_text">Will you be my Valentine?</h1>
+        </div>
+        <div class="gif_container">
+            <img id="gifImage" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXBiMnYyd3BzMnQ1M2c2MXQ2eWo5bGppNnVyeGVkenJoZWpjM256ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YZOsKxJfmvzG0/giphy.gif" alt="Cute animated illustration">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+    <script>
+        function nextPage() {
+            var header = document.getElementById('header_text');
+            var gif = document.getElementById('gifImage');
+            if (header.innerText === "Will you be my Valentine?") {
+                header.innerText = "Really??";
+                gif.src = "https://media3.giphy.com/media/ffzhLUixCtlsc/giphy.gif?cid=ecf05e479ozqk1bi0olf411mbtyguar8y0piwv7o1zxh4w1q&ep=v1_gifs_related&rid=giphy.gif&ct=g";
+            } else if (header.innerText === "Really??") {
+                header.innerText = "YAYYY!!!SEE YOU SOON! I LOVE YOU <3";
+                window.location.href = "yes.html";
+            }
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        }
+    </script> 
+</body> 
+</html>
